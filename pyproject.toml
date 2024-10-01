@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "kkk"
+version = "0.1.0"
+description = "Knights, Knaves and Kappas"
+authors = ["ArmanGrewal007 <armancode4u@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sympy = "^1.13.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
