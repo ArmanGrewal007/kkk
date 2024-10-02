@@ -2,7 +2,7 @@
   <h1>Knights, Knaves and Kappas*</h1>
 </div>
 
-![Backend Health](https://img.shields.io/website-up-down-green-red/https/kkk-8t4m.onrender.com/heath.svg)
+![Backend Health](https://img.shields.io/backend-up-down-green-red/https/kkk-8t4m.onrender.com/heath.svg)
 
 ----------
 
