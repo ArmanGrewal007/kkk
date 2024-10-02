@@ -1,4 +1,5 @@
 from itertools import product
+from sympy import symbols, And, Or, Equivalent, satisfiable
 
 
 '''
@@ -7,22 +8,28 @@ statements and variable names.
 I didn't find this in SymPy library so I implemented it.💪
 The solution is printed in bold green
 '''
-def print_truth_table(statements, variables):
+def get_truth_table(statements, variables):
     statement_dct = {
         stmt: f"{str(stmt).split(',', 1)[0].split('(')[1]}<->({str(stmt).split(',', 1)[1].strip(' )')})"
         for stmt in statements
     }
     variable_names = [str(var) for var in variables]
 
-    padding = 5 # Padding for header
+    padding = 5  # Padding for header
     # Calculate the maximum width for headers based on the longest variable name and statement
     header_items = variable_names + list(statement_dct.values())
     header_widths = [len(item) + padding for item in header_items]
+    
+    # Accumulate the output in a list
+    output = []
+    
     # Print the header
     header = ' '.join(f"{var:<{header_widths[i]}}" for i, var in enumerate(variable_names))
     header += ' '.join(statement_dct[stmt].ljust(header_widths[len(variable_names) + i]) 
                        for i, stmt in enumerate(statement_dct))
-    print_bold_underline(header)
+    
+    output.append(header)
+    output.append("-" * sum(header_widths))
     
     # Update the header widths for the results
     result_widths = create_centered_padding([len(item) for item in header_items], padding)
@@ -32,11 +39,15 @@ def print_truth_table(statements, variables):
         results = [bool(stmt.subs(dict(zip(variables, values)))) 
                    for stmt in statement_dct.keys()]
         if all(results):
-            print_bold_green(' '.join(f"{'T' if val else 'F':<{width}}" 
-                       for val, width in zip(values+tuple(results), result_widths)))
+            output.append('<span class="green">' +
+                        ' '.join(f"{'T' if val else 'F':<{width}}" 
+                       for val, width in zip(values + tuple(results), result_widths))
+                       + '</span>'
+                       )
         else:
-            print(' '.join(f"{'T' if val else 'F':<{width}}" 
-                       for val, width in zip(values+tuple(results), result_widths)))
+            output.append(' '.join(f"{'T' if val else 'F':<{width}}" 
+                       for val, width in zip(values + tuple(results), result_widths)))
+    return '\n'.join(output) 
 
 # More simple functions to handle formatting      
 def print_bold(text):
@@ -61,3 +72,15 @@ def create_centered_padding(input_list, padding):
             right_half = input_list[i] // 2
             result.append(left_half + padding + right_half)
     return result
+
+
+def get_solution(statements, check=False):
+    dct = satisfiable(And(*statements), all_models=False)
+    if dct is False: return False
+    elif check:      return True
+    else:
+        _mpp = {False: "Knave", True: "Knight"}
+        result = "\n".join(f"{k} &rarr; {_mpp[v]}" 
+                    for k, v in sorted(dct.items(), 
+                                        key=lambda item: str(item[0])))
+        return result

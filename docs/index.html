@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KKK</title>
     <link rel="stylesheet" href="style.css"></style>
+    <link rel="stylesheet" href="others.css"></style>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -13,5 +14,41 @@
     <div align="center">
         <h1>Knights Knaves and Kappas</h1>
     </div>    
+    
+    
+
+    <div class="wrapper">
+        <div id="puzzle-output" class="output-window">
+            <h3>Puzzle</h3>
+            <button onclick="generatePuzzle()">Generate Puzzle</button>
+            <div id="puzzle-content"></div>
+        </div>
+
+        <div id="solution-output" class="output-window">
+            <h3>Solution</h3>
+            <button onclick="showSolution()">Show Solution</button>
+            <div id="solution-content"></div>
+        </div>
+
+        <div id="truth-table-output" class="output-window">
+            <h3>Truth Table</h3>
+            <button onclick="showTruthTable()">Show Truth Table</button>
+            <div id="truth-table-content"></div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <span>
+            <i>* One handy trick: If you have too many rows in the 
+                truth table, and want to find the solution row. 
+                Start from the leftmost (A) and keep scrolling until 
+                it satisfies the solution (F if Knave and vice versa). 
+                Then match the second row, then the third, and so on ... 
+                just keep scrolling slowly and slowly each time. This 
+                startegy is guaranteed to bring you to the solution row. 
+                (Or any row if you are want)</i>
+        </span>
+    </div>
+
+    <div id="output"></div>
 </body>
 </html>

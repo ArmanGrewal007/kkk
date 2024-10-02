@@ -2,10 +2,20 @@ import random
 from sympy import symbols, Equivalent
 from sympy.logic.boolalg import Or, And, Not
 
-# Number of symbols to generate
-num_symbols = 10
-symbol_str = " ".join([chr(ord('A') + i) for i in range(num_symbols)])
-symbols_list = symbols(symbol_str)
+# Wrapper to generate statements
+def generate(num_symbols=2):
+    symbol_str = " ".join([chr(ord('A') + i) for i in range(num_symbols)])
+    symbols_list = symbols(symbol_str)
+    statements = []
+    for sym in symbols_list:
+        while True:
+            statement = random_statement(symbols_list)
+            equiv_statement = Equivalent(sym, statement)
+            # Ensure the statement is not trivially True or False
+            if not (equiv_statement == True or equiv_statement == False):
+                statements.append(equiv_statement)
+                break
+    return symbols_list, statements
 
 '''
 RANDOM STATEMENT GENERATOR
@@ -26,14 +36,3 @@ def random_statement(symbols):
         return Or(*negated_symbols)
     elif op_type == 'and':
         return And(*negated_symbols)
-
-# Generate genuine Equivalent statements
-statements = []
-for sym in symbols_list:
-    while True:
-        statement = random_statement(symbols_list)
-        equiv_statement = Equivalent(sym, statement)
-        # Ensure the statement is not trivially True or False
-        if not (equiv_statement == True or equiv_statement == False):
-            statements.append(equiv_statement)
-            break

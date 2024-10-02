@@ -1,0 +1,23 @@
+.output-window {
+    width: 300px;                       /* Set width */
+    height: 300px;                      /* Set height to make it square */
+    border: 2px solid #ccc;             /* Border for the square */
+    border-radius: 10px;                /* Optional: Rounded corners */
+    padding: 10px;                      /* Padding inside the square */
+    margin: 10px;                       /* Margin around each square */
+    background-color: white;            /* White background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+    overflow: auto;                     /* Scroll if content overflows */
+    flex: 1 1 calc(33% - 20px);         /* Allow flexibility while accounting for margins */
+}
+
+.wrapper {
+    display: flex;                      /* Use flexbox */
+    justify-content: space-between;     /* Space between items */
+    flex-wrap: wrap;                   /* Allow wrapping if necessary */
+    padding: 20px;                     /* Padding around the container */
+}
+
+.green{
+    color: green;
+}
