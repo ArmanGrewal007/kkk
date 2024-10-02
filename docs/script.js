@@ -1,5 +1,11 @@
+function updateSliderValue() {
+    const slider = document.getElementById("num-symbols");
+    document.getElementById("slider-value").innerText = slider.value;
+}
+
 function generatePuzzle() {
-    fetch('http://localhost:8000/generate_puzzle')
+    const numSymbols = document.getElementById("num-symbols").value;
+    fetch(`http://localhost:8000/generate_puzzle?num_symbols=${numSymbols}`)
         .then(response => response.json())
         .then(data => {
             if (data.statements && Array.isArray(data.statements)) {

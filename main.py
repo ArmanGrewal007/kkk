@@ -19,12 +19,12 @@ app.add_middleware(
 symbols_list, statements = [], []
 
 @app.get("/generate_puzzle")
-def get():
+def get(num_symbols: int):
     global symbols_list, statements
     # Recrusively generate statements, until we get a valid solution
     while True:
-        symbols_list, statements = generate(num_symbols=10)
-        if get_solution(statements, check=True):
+        symbols_list, statements = generate(num_symbols)
+        if get_solution(statements):
             return {"statements": parse_equivalent(statements)}
 
 @app.get("/solution")

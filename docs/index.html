@@ -6,7 +6,6 @@
     <title>KKK</title>
     <link rel="stylesheet" href="style.css"></style>
     <link rel="stylesheet" href="others.css"></style>
-    <script src="script.js" defer></script>
 </head>
 <body>
     <hr><hr>
@@ -20,6 +19,8 @@
     <div class="wrapper">
         <div id="puzzle-output" class="output-window">
             <h3>Puzzle</h3>
+            <label for="num-symbols">Number of Symbols: <span id="slider-value">3</span></label><br>
+            <input type="range" id="num-symbols" min="1" max="20" value="3" oninput="updateSliderValue()">
             <button onclick="generatePuzzle()">Generate Puzzle</button>
             <div id="puzzle-content"></div>
         </div>
@@ -49,6 +50,6 @@
         </span>
     </div>
 
-    <div id="output"></div>
+    <script src="script.js"></script>
 </body>
 </html>
