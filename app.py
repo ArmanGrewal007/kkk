@@ -30,10 +30,11 @@ def get(num_symbols: int):
 @app.get("/solution")
 def get():
     global statements    
+    dct = get_solution(statements)
     if dct is False:
         return {"solution": "No solution"}
     else:
-        return {"solution": get_solution(statements)}
+        return {"solution": dct}
 
 @app.get("/truth_table")
 def get():
