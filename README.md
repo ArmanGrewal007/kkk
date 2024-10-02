@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Knights, Knaves and Kappas*</h1> <br>
-  <img src="https://img.shields.io/website-up-down-green-red/https/kkk-8t4m.onrender.com/heath.svg?label=Backend" />
+  <img src="https://img.shields.io/website-up-down-green-red/https/kkk-8t4m.onrender.com/health.svg?label=Backend" />
   <img src="https://img.shields.io/website-up-down-green-red/https/armangrewal007.github.io/kkk.svg?label=GitHub%20Pages" />
 </div>
 
