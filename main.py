@@ -1,7 +1,7 @@
 from sympy import symbols, And, Equivalent, satisfiable
-from helper import print_truth_table
+from tthelper import print_truth_table
 from pprint import pprint 
-from test import statements, symbols_list
+from generate_test import statements, symbols_list
 
 
 print(symbols_list)
