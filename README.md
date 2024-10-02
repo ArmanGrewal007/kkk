@@ -10,6 +10,10 @@
 
 Backend is hosted on [`Render`](https://dashboard.render.com/web/srv-crumv7dds78s73cs697g/deploys/dep-crun2bpu0jms73fpj2s0?r=2024-10-02%4016%3A12%3A36%7E2024-10-02%4016%3A18%3A21) on a 512mb RAM CPU 😆. It has a really cold startup, and goes down after a while ... So, bear with it until I change the backend.
 
+Unfortunately `Render`, doesn't provide a deployment workflow to CD on their website, we can create hooks or github workflows. <br>
+I've made one ਜੁਗਾੜ, and a webhook is triggered whenever you star/unstar this repository! <br>
+For push event, I created a github action, because why not?
+
 ----------
 
 <tt>*<a href="https://en.wikipedia.org/wiki/Kappa_(folklore)">Kappas</a> are trickster spirits in Japanese folklore. Now, in some legegnds, they are helpful to humans, and in some they lure kids into water and eat them. So they are a blend of benevolence and malevolence.</tt><br>
