@@ -41,12 +41,7 @@ def get():
     truth_table = get_truth_table(statements, symbols_list)
     return {"truth_table": truth_table}
 
-# Statement : (Propositional Logic, Answer(Is A a knight or knave))
-dct = {
-    "A says A is knave": ("PARADOX", "No soln"),
-    "A says A is knight": ("A → A", "AMBIGUOUS: If A is knight, statement is true. If A is knave, statement is false"),
-    "A says B is knave": ("A → ¬B", "AMBIGUOUS: IF A is knight, B is knave. If A is knave B is knight"),
-    "A says B is knight": ("A → B", "AMBIGUOUS: IF A is knight, B is knight. If A is knave B is knave"),
-    "A says they are both knaves": ("A → (¬A ∧ ¬B)", "A is knave and B is knight"),
-    "A says they are both knights": ("A → (A ∧ B)", "AMBIGUOUS: IF A is knight, B is knight. If A is knave B is knave"),
-}
+
+if __name__ == "__main__":
+    import uvicorn, os
+    uvicorn.run("main:app", host="0.0.0.0", port=int(os.getenv("PORT", 8000)), reload=True)

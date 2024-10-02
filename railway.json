@@ -1,0 +1,8 @@
+{
+    "build": {
+      "nixpacks": {
+        "dependencies": ["python3-venv"]
+      }
+    }
+  }
+  
