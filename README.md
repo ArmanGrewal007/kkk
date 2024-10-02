@@ -1,7 +1,7 @@
 <div align="center">
   <h1>Knights, Knaves and Kappas*</h1> <br>
-  <img src="https://img.shields.io/website-up-down-green-red/https/kkk-8t4m.onrender.com.svg?label=Backend" />
-  <img src="https://img.shields.io/website-up-down-green-red/https/armangrewal007.github.io/kkk.svg?label=GitHub%20Pages" />
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fkkk-8t4m.onrender.com%2Fhealth&style=for-the-badge&label=Backend&link=https%3A%2F%2Fkkk-8t4m.onrender.com%2Fdocs" />
+<img src="https://img.shields.io/website?url=https%3A%2F%2Farmangrewal007.github.io%2Fkkk%2F&style=for-the-badge&label=GitHub%20Pages&link=https%3A%2F%2Farmangrewal007.github.io%2Fkkk%2F" />
 </div>
 
 
