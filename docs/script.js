@@ -5,7 +5,8 @@ function updateSliderValue() {
 
 function generatePuzzle() {
     const numSymbols = document.getElementById("num-symbols").value;
-    fetch(`http://kkk-8t4m.onrender.com/generate_puzzle?num_symbols=${numSymbols}`)
+    fetch(`https://kkk-8t4m.onrender.com/generate_puzzle?num_symbols=${numSymbols}`)
+    // fetch(`http://localhost:8000/generate_puzzle?num_symbols=${numSymbols}`)
         .then(response => response.json())
         .then(data => {
             if (data.statements && Array.isArray(data.statements)) {
@@ -24,7 +25,7 @@ function generatePuzzle() {
 }
 
 function showSolution() {
-    fetch('http://kkk-8t4m.onrender.com/solution')
+    fetch('https://kkk-8t4m.onrender.com/solution')
         .then(response => response.json())
         .then(data => {
             const soln = data.solution;
@@ -41,7 +42,7 @@ function showSolution() {
 
 function showTruthTable() {
     // Assuming an endpoint like /truth_table which provides the truth table
-    fetch('http://kkk-8t4m.onrender.com/truth_table')
+    fetch('https://kkk-8t4m.onrender.com/truth_table')
         .then(response => response.json())
         .then(data => {
             console.log(data);

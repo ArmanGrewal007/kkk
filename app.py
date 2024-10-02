@@ -42,6 +42,10 @@ def get():
     truth_table = get_truth_table(statements, symbols_list)
     return {"truth_table": truth_table}
 
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 
 if __name__ == "__main__":
     import uvicorn, os
