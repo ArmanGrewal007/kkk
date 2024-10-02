@@ -5,7 +5,7 @@ description = "Knights, Knaves and Kappas"
 authors = ["ArmanGrewal007 <armancode4u@gmail.com>"]
 license = "MIT"
 readme = "README.md"
-package-mode = true
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.10"
