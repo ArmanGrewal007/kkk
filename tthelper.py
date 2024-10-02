@@ -1,5 +1,5 @@
 from itertools import product
-from sympy import symbols, And, Or, Equivalent, satisfiable
+from sympy import And, satisfiable
 
 
 '''

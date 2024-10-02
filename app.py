@@ -1,8 +1,7 @@
-from sympy import symbols, And, Or, Equivalent, satisfiable
 from generate_test import generate
 from pl_to_nl import parse_equivalent
 from tthelper import get_truth_table, get_solution
-from fastapi import FastAPI
+from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 
 
@@ -42,7 +41,7 @@ def get():
     truth_table = get_truth_table(statements, symbols_list)
     return {"truth_table": truth_table}
 
-@app.get("/health")
+@app.get("/health", status_code=status.HTTP_200_OK)
 def health_check():
     return {"status": "ok"}
 

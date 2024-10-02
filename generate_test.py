@@ -12,7 +12,7 @@ def generate(num_symbols=2):
             statement = random_statement(symbols_list)
             equiv_statement = Equivalent(sym, statement)
             # Ensure the statement is not trivially True or False
-            if not (equiv_statement == True or equiv_statement == False):
+            if not (equiv_statement is True or equiv_statement is False):
                 statements.append(equiv_statement)
                 break
     return symbols_list, statements
