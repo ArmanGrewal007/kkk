@@ -18,6 +18,7 @@ app.add_middleware(
 symbols_list, statements = [], []
 
 @app.get("/")
+@app.head("/health", status_code=status.HTTP_200_OK)
 def home():
     return {"message": "Welcome to the Truth Table Generator API!"}
 
@@ -46,6 +47,7 @@ def get():
     return {"truth_table": truth_table}
 
 @app.get("/health", status_code=status.HTTP_200_OK)
+@app.head("/health", status_code=status.HTTP_200_OK)
 def health_check():
     return {"status": "ok"}
 
