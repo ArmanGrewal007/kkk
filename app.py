@@ -17,8 +17,9 @@ app.add_middleware(
 
 symbols_list, statements = [], []
 
-@app.get("/")
-@app.head("/health", status_code=status.HTTP_200_OK)
+# Cand have multiple methods for same route ... either by api_route
+# or by using multiple decorators, as shown below in /health
+@app.api_route("/", methods=["GET", "HEAD"])
 def home():
     return {"message": "Welcome to the Truth Table Generator API!"}
 
