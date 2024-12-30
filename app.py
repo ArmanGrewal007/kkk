@@ -17,6 +17,10 @@ app.add_middleware(
 
 symbols_list, statements = [], []
 
+@app.get("/")
+def home():
+    return {"message": "Welcome to the Truth Table Generator API!"}
+
 @app.get("/generate_puzzle")
 def get(num_symbols: int):
     global symbols_list, statements
